@@ -31,35 +31,32 @@
       </VBox>
       <VBox layoutX="184.0" prefHeight="400.0" prefWidth="416.0">
          <children>
-            <TextArea prefHeight="55.0" prefWidth="252.0" style="-fx-border-color: white;" text="Admin Login">
+            <Label text="Admin Login">
                <font>
-                  <Font size="24.0" />
+                  <Font name="System Bold" size="24.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="25.0" left="10.0" right="250.0" top="20.0" />
+                  <Insets bottom="25.0" left="25.0" top="25.0" />
                </VBox.margin>
-            </TextArea>
-            <TextArea prefHeight="33.0" prefWidth="416.0" text="Email:">
-               <VBox.margin>
-                  <Insets left="25.0" right="340.0" />
-               </VBox.margin>
+            </Label>
+            <Label text="Email: ">
                <font>
                   <Font size="14.0" />
                </font>
-            </TextArea>
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+            </Label>
             <TextField fx:id="email">
                <VBox.margin>
                   <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
                </VBox.margin>
             </TextField>
-            <TextArea prefHeight="33.0" prefWidth="187.0" text="Password:">
-               <font>
-                  <Font size="14.0" />
-               </font>
+            <Label text="Password:">
                <VBox.margin>
-                  <Insets left="25.0" right="310.0" />
+                  <Insets left="25.0" />
                </VBox.margin>
-            </TextArea>
+            </Label>
             <TextField fx:id="pass">
                <VBox.margin>
                   <Insets left="25.0" right="25.0" top="10.0" />
