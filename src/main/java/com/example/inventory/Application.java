@@ -8,9 +8,6 @@ import javafx.stage.Stage;
 import java.sql.*;
 
 public class Application extends javafx.application.Application {
-    private static final String DB_URL = "";
-    private static final String DB_USER = "";
-    private static final String DB_PASSWORD = "";
 
     @Override
     public void start(Stage primaryStage) throws Exception {
