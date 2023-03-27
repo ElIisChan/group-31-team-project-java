@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_27_03_2023,_20_42_[Changes]" date="1679946151170" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_03_2023,_20_42_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 27/03/2023, 20:42 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="src/main/java/AdminDash/.mvn/wrapper/maven-wrapper.jar" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="src/main/java/AdminDash/mvnw.cmd" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="src/main/java/AdminDash/mvnw" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>

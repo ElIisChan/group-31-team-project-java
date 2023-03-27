@@ -1,0 +1,882 @@
+Index: src/main/java/AdminDash/.mvn/wrapper/maven-wrapper.properties
+===================================================================
+diff --git a/src/main/java/AdminDash/.mvn/wrapper/maven-wrapper.properties b/src/main/java/AdminDash/.mvn/wrapper/maven-wrapper.properties
+deleted file mode 100644
+--- a/src/main/java/AdminDash/.mvn/wrapper/maven-wrapper.properties	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,2 +0,0 @@
+-distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.8.5/apache-maven-3.8.5-bin.zip
+-wrapperUrl=https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar
+\ No newline at end of file
+Index: src/main/java/AdminDash/pom.xml
+===================================================================
+diff --git a/src/main/java/AdminDash/pom.xml b/src/main/java/AdminDash/pom.xml
+deleted file mode 100644
+--- a/src/main/java/AdminDash/pom.xml	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,117 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project xmlns="http://maven.apache.org/POM/4.0.0"
+-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+-    <modelVersion>4.0.0</modelVersion>
+-
+-    <groupId>com.example</groupId>
+-    <artifactId>AdminDash</artifactId>
+-    <version>1.0-SNAPSHOT</version>
+-    <name>AdminDash</name>
+-
+-    <properties>
+-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+-        <junit.version>5.9.1</junit.version>
+-    </properties>
+-
+-    <dependencies>
+-        <dependency>
+-            <groupId>org.openjfx</groupId>
+-            <artifactId>javafx-controls</artifactId>
+-            <version>19</version>
+-        </dependency>
+-        <dependency>
+-            <groupId>org.openjfx</groupId>
+-            <artifactId>javafx-fxml</artifactId>
+-            <version>19</version>
+-        </dependency>
+-        <dependency>
+-            <groupId>org.openjfx</groupId>
+-            <artifactId>javafx-web</artifactId>
+-            <version>19</version>
+-        </dependency>
+-        <dependency>
+-            <groupId>org.controlsfx</groupId>
+-            <artifactId>controlsfx</artifactId>
+-            <version>11.1.2</version>
+-        </dependency>
+-        <dependency>
+-            <groupId>com.dlsc.formsfx</groupId>
+-            <artifactId>formsfx-core</artifactId>
+-            <version>11.5.0</version>
+-            <exclusions>
+-                <exclusion>
+-                    <groupId>org.openjfx</groupId>
+-                    <artifactId>*</artifactId>
+-                </exclusion>
+-            </exclusions>
+-        </dependency>
+-        <dependency>
+-            <groupId>org.kordamp.ikonli</groupId>
+-            <artifactId>ikonli-javafx</artifactId>
+-            <version>12.3.1</version>
+-        </dependency>
+-        <dependency>
+-            <groupId>org.kordamp.bootstrapfx</groupId>
+-            <artifactId>bootstrapfx-core</artifactId>
+-            <version>0.4.0</version>
+-        </dependency>
+-        <dependency>
+-            <groupId>eu.hansolo</groupId>
+-            <artifactId>tilesfx</artifactId>
+-            <version>17.1.15</version>
+-            <exclusions>
+-                <exclusion>
+-                    <groupId>org.openjfx</groupId>
+-                    <artifactId>*</artifactId>
+-                </exclusion>
+-            </exclusions>
+-        </dependency>
+-        <dependency>
+-            <groupId>org.junit.jupiter</groupId>
+-            <artifactId>junit-jupiter-api</artifactId>
+-            <version>${junit.version}</version>
+-            <scope>test</scope>
+-        </dependency>
+-        <dependency>
+-            <groupId>org.junit.jupiter</groupId>
+-            <artifactId>junit-jupiter-engine</artifactId>
+-            <version>${junit.version}</version>
+-            <scope>test</scope>
+-        </dependency>
+-    </dependencies>
+-
+-    <build>
+-        <plugins>
+-            <plugin>
+-                <groupId>org.apache.maven.plugins</groupId>
+-                <artifactId>maven-compiler-plugin</artifactId>
+-                <version>3.10.1</version>
+-                <configuration>
+-                    <source>19</source>
+-                    <target>19</target>
+-                </configuration>
+-            </plugin>
+-            <plugin>
+-                <groupId>org.openjfx</groupId>
+-                <artifactId>javafx-maven-plugin</artifactId>
+-                <version>0.0.8</version>
+-                <executions>
+-                    <execution>
+-                        <!-- Default configuration for running with: mvn clean javafx:run -->
+-                        <id>default-cli</id>
+-                        <configuration>
+-                            <mainClass>com.example.admindash/com.example.admindash.HelloApplication</mainClass>
+-                            <launcher>app</launcher>
+-                            <jlinkZipName>app</jlinkZipName>
+-                            <jlinkImageName>app</jlinkImageName>
+-                            <noManPages>true</noManPages>
+-                            <stripDebug>true</stripDebug>
+-                            <noHeaderFiles>true</noHeaderFiles>
+-                        </configuration>
+-                    </execution>
+-                </executions>
+-            </plugin>
+-        </plugins>
+-    </build>
+-</project>
+\ No newline at end of file
+Index: src/main/java/Admin.java
+===================================================================
+diff --git a/src/main/java/Admin.java b/src/main/java/Admin.java
+deleted file mode 100644
+--- a/src/main/java/Admin.java	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,14 +0,0 @@
+-import javafx.application.Application;
+-import javafx.stage.Stage;
+-
+-public class Admin extends Application {
+-
+-    public static void main(String[] args) {
+-        launch(args);
+-    }
+-
+-    @Override
+-    public void start(Stage primaryStage) {
+-
+-    }
+-}
+Index: src/main/java/AdminDash/.idea/aws.xml
+===================================================================
+diff --git a/src/main/java/AdminDash/.idea/aws.xml b/src/main/java/AdminDash/.idea/aws.xml
+deleted file mode 100644
+--- a/src/main/java/AdminDash/.idea/aws.xml	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,11 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="accountSettings">
+-    <option name="activeRegion" value="us-east-1" />
+-    <option name="recentlyUsedRegions">
+-      <list>
+-        <option value="us-east-1" />
+-      </list>
+-    </option>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: src/main/java/AdminDash/.idea/.gitignore
+===================================================================
+diff --git a/src/main/java/AdminDash/.idea/.gitignore b/src/main/java/AdminDash/.idea/.gitignore
+deleted file mode 100644
+--- a/src/main/java/AdminDash/.idea/.gitignore	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,8 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+Index: src/main/java/adminDash.fxml
+===================================================================
+diff --git a/src/main/java/adminDash.fxml b/src/main/java/adminDash.fxml
+deleted file mode 100644
+--- a/src/main/java/adminDash.fxml	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,86 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.scene.text.*?>
+-<?import javafx.scene.control.*?>
+-<?import javafx.scene.image.*?>
+-<?import javafx.geometry.*?>
+-<?import java.lang.*?>
+-<?import javafx.scene.layout.*?>
+-
+-
+-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+-   <children>
+-      <VBox prefHeight="400.0" prefWidth="184.0" style="-fx-background-color: #272859;">
+-         <children>
+-            <ImageView fitHeight="44.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
+-               <image>
+-                  <Image url="@../../../../Team-31/group-31-team-project-website/src/main/resources/templates/images/logo.png" />
+-               </image>
+-               <VBox.margin>
+-                  <Insets left="15.0" right="10.0" top="15.0" />
+-               </VBox.margin>
+-            </ImageView>
+-            <Button fx:id="btn_dash" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Dashboard">
+-               <VBox.margin>
+-                  <Insets top="30.0" />
+-               </VBox.margin>
+-               <font>
+-                  <Font size="14.0" />
+-               </font>
+-            </Button>
+-            <Button fx:id="btn_notif" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Notifications">
+-               <font>
+-                  <Font size="14.0" />
+-               </font>
+-               <VBox.margin>
+-                  <Insets top="10.0" />
+-               </VBox.margin>
+-            </Button>
+-            <Button fx:id="btn_orders" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Orders">
+-               <font>
+-                  <Font size="14.0" />
+-               </font>
+-               <VBox.margin>
+-                  <Insets top="10.0" />
+-               </VBox.margin>
+-            </Button>
+-            <Button fx:id="btn_edit" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Edit Webpage">
+-               <font>
+-                  <Font size="14.0" />
+-               </font>
+-               <VBox.margin>
+-                  <Insets top="10.0" />
+-               </VBox.margin>
+-            </Button>
+-            <Button fx:id="btn_logout" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Logout">
+-               <font>
+-                  <Font size="14.0" />
+-               </font>
+-               <VBox.margin>
+-                  <Insets top="10.0" />
+-               </VBox.margin>
+-            </Button>
+-         </children>
+-      </VBox>
+-      <VBox layoutX="184.0" prefHeight="400.0" prefWidth="416.0">
+-         <children>
+-            <Pane prefHeight="400.0" prefWidth="366.0">
+-               <children>
+-                  <Label text="Admin Dashboard">
+-                     <font>
+-                        <Font name="System Bold" size="24.0" />
+-                     </font>
+-                     <padding>
+-                        <Insets bottom="25.0" left="25.0" top="25.0" />
+-                     </padding>
+-                  </Label>
+-                  <Label layoutX="25.0" layoutY="79.0" text="Stats" textFill="#818181" />
+-                  <Pane fx:id="pane_1" layoutX="25.0" layoutY="100.0" prefHeight="112.0" prefWidth="90.0" />
+-               </children>
+-            </Pane>
+-         </children>
+-      </VBox>
+-   </children>
+-</AnchorPane>
+-
+-
+Index: src/main/java/invmanage/Main.java
+===================================================================
+diff --git a/src/main/java/invmanage/Main.java b/src/main/java/invmanage/Main.java
+deleted file mode 100644
+--- a/src/main/java/invmanage/Main.java	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,16 +0,0 @@
+-package invmanage;
+-
+-import javafx.application.Application;
+-import javafx.stage.Stage;
+-
+-public class Main extends Application {
+-    @Override
+-    public void start(Stage stage) throws Exception {
+-        // get path to login file
+-        // load file
+-        // Load scene
+-        // Show scene
+-    }
+-
+-    // Does this class need a main?
+-}
+\ No newline at end of file
+Index: src/main/java/AdminDash/.gitignore
+===================================================================
+diff --git a/src/main/java/AdminDash/.gitignore b/src/main/java/AdminDash/.gitignore
+deleted file mode 100644
+--- a/src/main/java/AdminDash/.gitignore	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,38 +0,0 @@
+-target/
+-!.mvn/wrapper/maven-wrapper.jar
+-!**/src/main/**/target/
+-!**/src/test/**/target/
+-
+-### IntelliJ IDEA ###
+-.idea/modules.xml
+-.idea/jarRepositories.xml
+-.idea/compiler.xml
+-.idea/libraries/
+-*.iws
+-*.iml
+-*.ipr
+-
+-### Eclipse ###
+-.apt_generated
+-.classpath
+-.factorypath
+-.project
+-.settings
+-.springBeans
+-.sts4-cache
+-
+-### NetBeans ###
+-/nbproject/private/
+-/nbbuild/
+-/dist/
+-/nbdist/
+-/.nb-gradle/
+-build/
+-!**/src/main/**/build/
+-!**/src/test/**/build/
+-
+-### VS Code ###
+-.vscode/
+-
+-### Mac OS ###
+-.DS_Store
+\ No newline at end of file
+Index: src/main/java/AdminDash/src/main/java/com/example/admindash/AdminDash.java
+===================================================================
+diff --git a/src/main/java/AdminDash/src/main/java/com/example/admindash/AdminDash.java b/src/main/java/AdminDash/src/main/java/com/example/admindash/AdminDash.java
+deleted file mode 100644
+--- a/src/main/java/AdminDash/src/main/java/com/example/admindash/AdminDash.java	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,86 +0,0 @@
+-package com.example.admindash;
+-
+-
+-import javafx.application.Application;
+-import javafx.geometry.Insets;
+-import javafx.scene.Scene;
+-import javafx.scene.control.Button;
+-import javafx.scene.control.Label;
+-import javafx.scene.image.Image;
+-import javafx.scene.image.ImageView;
+-import javafx.scene.layout.AnchorPane;
+-import javafx.scene.layout.Pane;
+-import javafx.scene.layout.VBox;
+-import javafx.scene.text.Font;
+-import javafx.stage.Stage;
+-
+-
+-    public class AdminDash extends Application {
+-
+-        @Override
+-        public void start(Stage primaryStage) {
+-            AnchorPane root = new AnchorPane();
+-            root.setPrefSize(600, 400);
+-
+-            VBox menuBox = new VBox();
+-            menuBox.setPrefSize(184, 400);
+-            menuBox.setStyle("-fx-background-color: #272859;");
+-
+-            ImageView logoImg = new ImageView(new Image("file:src/main/resources/templates/images/logo.png"));
+-            logoImg.setFitWidth(154);
+-            logoImg.setFitHeight(44);
+-            VBox.setMargin(logoImg, new Insets(15, 10, 0, 15));
+-            menuBox.getChildren().add(logoImg);
+-
+-            Button btnDash = new Button("Dashboard");
+-            btnDash.setStyle("-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;");
+-            btnDash.setPrefSize(184, 30);
+-            btnDash.setFont(new Font(14));
+-            VBox.setMargin(btnDash, new Insets(30, 0, 0, 0));
+-            menuBox.getChildren().add(btnDash);
+-
+-            Button btnNotif = new Button("Notifications");
+-            btnNotif.setStyle("-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;");
+-            btnNotif.setPrefSize(184, 30);
+-            btnNotif.setFont(new Font(14));
+-            VBox.setMargin(btnNotif, new Insets(10, 0, 0, 0));
+-            menuBox.getChildren().add(btnNotif);
+-
+-            Button btnOrders = new Button("Orders");
+-            btnOrders.setStyle("-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;");
+-            btnOrders.setPrefSize(184, 30);
+-            btnOrders.setFont(new Font(14));
+-            VBox.setMargin(btnOrders, new Insets(10, 0, 0, 0));
+-            menuBox.getChildren().add(btnOrders);
+-
+-            Button btnEdit = new Button("Edit Webpage");
+-            btnEdit.setStyle("-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;");
+-            btnEdit.setPrefSize(184, 30);
+-            btnEdit.setFont(new Font(14));
+-            VBox.setMargin(btnEdit, new Insets(10, 0, 0, 0));
+-            menuBox.getChildren().add(btnEdit);
+-
+-            Button btnLogout = new Button("Logout");
+-            btnLogout.setStyle("-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;");
+-            btnLogout.setPrefSize(184, 30);
+-            btnLogout.setFont(new Font(14));
+-            VBox.setMargin(btnLogout, new Insets(10, 0, 0, 0));
+-            menuBox.getChildren().add(btnLogout);
+-
+-            VBox contentBox = new VBox();
+-            contentBox.setPrefSize(416, 400);
+-            contentBox.setLayoutX(184);
+-
+-            Pane pane = new Pane();
+-            pane.setPrefSize(366, 400);
+-            Label label = new Label("Admin Dashboard");
+-            label.setFont(Font.font("System Bold", 24));
+-            label.setPadding(new Insets(25));
+-            pane.getChildren().add(label);
+-
+-            Label statsLabel = new Label("Stats");
+-            statsLabel.setTextFill(javafx.scene.paint.Color.web("#818181"));
+-
+-        }
+-    }
+-
+Index: src/main/java/adminLogin.fxml
+===================================================================
+diff --git a/src/main/java/adminLogin.fxml b/src/main/java/adminLogin.fxml
+deleted file mode 100644
+--- a/src/main/java/adminLogin.fxml	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,76 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.scene.text.*?>
+-<?import javafx.scene.control.*?>
+-<?import javafx.scene.image.*?>
+-<?import javafx.geometry.*?>
+-<?import java.lang.*?>
+-<?import javafx.scene.layout.*?>
+-
+-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+-   <children>
+-      <VBox prefHeight="400.0" prefWidth="184.0" style="-fx-background-color: #272859;">
+-         <children>
+-            <ImageView fitHeight="44.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
+-               <image>
+-                  <Image url="@../../../../Team-31/group-31-team-project-website/src/main/resources/templates/images/logo.png" />
+-               </image>
+-               <VBox.margin>
+-                  <Insets left="15.0" right="10.0" top="15.0" />
+-               </VBox.margin>
+-            </ImageView>
+-            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Login">
+-               <VBox.margin>
+-                  <Insets top="30.0" />
+-               </VBox.margin>
+-               <font>
+-                  <Font size="14.0" />
+-               </font>
+-            </Button>
+-         </children>
+-      </VBox>
+-      <VBox layoutX="184.0" prefHeight="400.0" prefWidth="416.0">
+-         <children>
+-            <Label text="Admin Login">
+-               <font>
+-                  <Font name="System Bold" size="24.0" />
+-               </font>
+-               <VBox.margin>
+-                  <Insets bottom="25.0" left="25.0" top="25.0" />
+-               </VBox.margin>
+-            </Label>
+-            <Label text="Email: ">
+-               <font>
+-                  <Font size="14.0" />
+-               </font>
+-               <VBox.margin>
+-                  <Insets left="25.0" top="10.0" />
+-               </VBox.margin>
+-            </Label>
+-            <TextField fx:id="email">
+-               <VBox.margin>
+-                  <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+-               </VBox.margin>
+-            </TextField>
+-            <Label text="Password:">
+-               <VBox.margin>
+-                  <Insets left="25.0" />
+-               </VBox.margin>
+-            </Label>
+-            <TextField fx:id="pass">
+-               <VBox.margin>
+-                  <Insets left="25.0" right="25.0" top="10.0" />
+-               </VBox.margin>
+-            </TextField>
+-            <Button fx:id="btn_login" mnemonicParsing="false" prefHeight="30.0" prefWidth="81.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Login">
+-               <font>
+-                  <Font size="14.0" />
+-               </font>
+-               <VBox.margin>
+-                  <Insets bottom="25.0" left="25.0" top="20.0" />
+-               </VBox.margin>
+-            </Button>
+-         </children>
+-      </VBox>
+-   </children>
+-</AnchorPane>
+Index: src/main/java/AdminDash/src/main/java/com/example/admindash/HelloController.java
+===================================================================
+diff --git a/src/main/java/AdminDash/src/main/java/com/example/admindash/HelloController.java b/src/main/java/AdminDash/src/main/java/com/example/admindash/HelloController.java
+deleted file mode 100644
+--- a/src/main/java/AdminDash/src/main/java/com/example/admindash/HelloController.java	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,14 +0,0 @@
+-package com.example.admindash;
+-
+-import javafx.fxml.FXML;
+-import javafx.scene.control.Label;
+-
+-public class HelloController {
+-    @FXML
+-    private Label welcomeText;
+-
+-    @FXML
+-    protected void onHelloButtonClick() {
+-        welcomeText.setText("Welcome to JavaFX Application!");
+-    }
+-}
+\ No newline at end of file
+Index: src/main/java/module-info.java
+===================================================================
+diff --git a/src/main/java/module-info.java b/src/main/java/module-info.java
+deleted file mode 100644
+--- a/src/main/java/module-info.java	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,9 +0,0 @@
+-module com.example.demo {
+-    requires javafx.controls;
+-    requires javafx.fxml;
+-
+-    requires org.kordamp.bootstrapfx.core;
+-
+-    opens com.example.demo to javafx.fxml;
+-    exports com.example.demo;
+-}
+\ No newline at end of file
+Index: src/main/java/AdminDash/.idea/misc.xml
+===================================================================
+diff --git a/src/main/java/AdminDash/.idea/misc.xml b/src/main/java/AdminDash/.idea/misc.xml
+deleted file mode 100644
+--- a/src/main/java/AdminDash/.idea/misc.xml	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,14 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="MavenProjectsManager">
+-    <option name="originalFiles">
+-      <list>
+-        <option value="$PROJECT_DIR$/pom.xml" />
+-      </list>
+-    </option>
+-  </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="19" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/out" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: src/main/java/adminstyle.css
+===================================================================
+diff --git a/src/main/java/adminstyle.css b/src/main/java/adminstyle.css
+deleted file mode 100644
+--- a/src/main/java/adminstyle.css	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,8 +0,0 @@
+-.pane_1{
+-    -fx-background-color: #272859;
+-    -Ex-border-width: 2px 2px 2px 2px;
+-    -fx-border-radius: 20px;
+-    -fx-background-radius: 20px;
+-    -fx-border-style: solid;
+-    -fx-border-color: #272859;
+-}
+Index: src/main/java/AdminDash/.idea/encodings.xml
+===================================================================
+diff --git a/src/main/java/AdminDash/.idea/encodings.xml b/src/main/java/AdminDash/.idea/encodings.xml
+deleted file mode 100644
+--- a/src/main/java/AdminDash/.idea/encodings.xml	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Encoding">
+-    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: src/main/java/AdminDash/.idea/codeStyles/codeStyleConfig.xml
+===================================================================
+diff --git a/src/main/java/AdminDash/.idea/codeStyles/codeStyleConfig.xml b/src/main/java/AdminDash/.idea/codeStyles/codeStyleConfig.xml
+deleted file mode 100644
+--- a/src/main/java/AdminDash/.idea/codeStyles/codeStyleConfig.xml	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,5 +0,0 @@
+-<component name="ProjectCodeStyleConfiguration">
+-  <state>
+-    <option name="PREFERRED_PROJECT_CODE_STYLE" value="Default" />
+-  </state>
+-</component>
+\ No newline at end of file
+Index: src/main/java/AdminDash/.idea/codeStyles/Project.xml
+===================================================================
+diff --git a/src/main/java/AdminDash/.idea/codeStyles/Project.xml b/src/main/java/AdminDash/.idea/codeStyles/Project.xml
+deleted file mode 100644
+--- a/src/main/java/AdminDash/.idea/codeStyles/Project.xml	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,7 +0,0 @@
+-<component name="ProjectCodeStyleConfiguration">
+-  <code_scheme name="Project" version="173">
+-    <ScalaCodeStyleSettings>
+-      <option name="MULTILINE_STRING_CLOSING_QUOTES_ON_NEW_LINE" value="true" />
+-    </ScalaCodeStyleSettings>
+-  </code_scheme>
+-</component>
+\ No newline at end of file
+Index: src/main/java/AdminDash/src/main/java/module-info.java
+===================================================================
+diff --git a/src/main/java/AdminDash/src/main/java/module-info.java b/src/main/java/AdminDash/src/main/java/module-info.java
+deleted file mode 100644
+--- a/src/main/java/AdminDash/src/main/java/module-info.java	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,15 +0,0 @@
+-module com.example.admindash {
+-    requires javafx.controls;
+-    requires javafx.fxml;
+-    requires javafx.web;
+-
+-    requires org.controlsfx.controls;
+-    requires com.dlsc.formsfx;
+-    requires org.kordamp.ikonli.javafx;
+-    requires org.kordamp.bootstrapfx.core;
+-    requires eu.hansolo.tilesfx;
+-    requires java.desktop;
+-
+-    opens com.example.admindash to javafx.fxml;
+-    exports com.example.admindash;
+-}
+\ No newline at end of file
+Index: src/main/java/AdminDash/src/main/resources/com/example/admindash/hello-view.fxml
+===================================================================
+diff --git a/src/main/java/AdminDash/src/main/resources/com/example/admindash/hello-view.fxml b/src/main/java/AdminDash/src/main/resources/com/example/admindash/hello-view.fxml
+deleted file mode 100644
+--- a/src/main/java/AdminDash/src/main/resources/com/example/admindash/hello-view.fxml	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ /dev/null	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
+@@ -1,16 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.geometry.Insets?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.layout.VBox?>
+-
+-<?import javafx.scene.control.Button?>
+-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+-      fx:controller="com.example.admindash.HelloController">
+-    <padding>
+-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+-    </padding>
+-
+-    <Label fx:id="welcomeText"/>
+-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+-</VBox>
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\n    <modelVersion>4.0.0</modelVersion>\n\n    <groupId>com.example</groupId>\n    <artifactId>demo</artifactId>\n    <version>1.0-SNAPSHOT</version>\n    <name>demo</name>\n\n    <properties>\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\n        <junit.version>5.9.1</junit.version>\n    </properties>\n\n    <dependencies>\n        <dependency>\n            <groupId>org.openjfx</groupId>\n            <artifactId>javafx-controls</artifactId>\n            <version>19</version>\n        </dependency>\n        <dependency>\n            <groupId>org.openjfx</groupId>\n            <artifactId>javafx-fxml</artifactId>\n            <version>19</version>\n        </dependency>\n        <dependency>\n            <groupId>org.kordamp.bootstrapfx</groupId>\n            <artifactId>bootstrapfx-core</artifactId>\n            <version>0.4.0</version>\n        </dependency>\n        <dependency>\n            <groupId>org.junit.jupiter</groupId>\n            <artifactId>junit-jupiter-api</artifactId>\n            <version>${junit.version}</version>\n            <scope>test</scope>\n        </dependency>\n        <dependency>\n            <groupId>org.junit.jupiter</groupId>\n            <artifactId>junit-jupiter-engine</artifactId>\n            <version>${junit.version}</version>\n            <scope>test</scope>\n        </dependency>\n    </dependencies>\n\n    <build>\n        <plugins>\n            <plugin>\n                <groupId>org.apache.maven.plugins</groupId>\n                <artifactId>maven-compiler-plugin</artifactId>\n                <version>3.10.1</version>\n                <configuration>\n                    <source>19</source>\n                    <target>19</target>\n                </configuration>\n            </plugin>\n            <plugin>\n                <groupId>org.openjfx</groupId>\n                <artifactId>javafx-maven-plugin</artifactId>\n                <version>0.0.8</version>\n                <executions>\n                    <execution>\n                        <!-- Default configuration for running with: mvn clean javafx:run -->\n                        <id>default-cli</id>\n                        <configuration>\n                            <mainClass>com.example.demo/com.example.demo.HelloApplication</mainClass>\n                            <launcher>app</launcher>\n                            <jlinkZipName>app</jlinkZipName>\n                            <jlinkImageName>app</jlinkImageName>\n                            <noManPages>true</noManPages>\n                            <stripDebug>true</stripDebug>\n                            <noHeaderFiles>true</noHeaderFiles>\n                        </configuration>\n                    </execution>\n                </executions>\n            </plugin>\n        </plugins>\n    </build>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision fcab3dcd91270a3a697648adae460fa1f1ee3fe4)
++++ b/pom.xml	(date 1679945003280)
+@@ -42,6 +42,11 @@
+             <version>${junit.version}</version>
+             <scope>test</scope>
+         </dependency>
++        <dependency>
++            <groupId>org.openjfx</groupId>
++            <artifactId>javafx-graphics</artifactId>
++            <version>19</version>
++        </dependency>
+     </dependencies>
+ 
+     <build>
+Index: src/main/java/sample/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/sample/Main.java b/src/main/java/sample/Main.java
+new file mode 100644
+--- /dev/null	(date 1679945342883)
++++ b/src/main/java/sample/Main.java	(date 1679945342883)
+@@ -0,0 +1,21 @@
++package sample;
++
++import javafx.application.Application;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Parent;
++import javafx.scene.Scene;
++import javafx.stage.Stage;
++
++public class Main extends Application {
++    @Override
++    public void start(Stage stage) throws Exception {
++        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
++        stage.setTitle("Dashboard");
++        stage.setScene(new Scene(root, 300,275));
++        stage.show();
++    }
++
++    public static void main(String[] args){
++        launch(args);
++    }
++}
+Index: .idea/uiDesigner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+new file mode 100644
+--- /dev/null	(date 1679945061779)
++++ b/.idea/uiDesigner.xml	(date 1679945061779)
+@@ -0,0 +1,124 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Palette2">
++    <group name="Swing">
++      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
++      </item>
++      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.svg" removable="false" auto-create-binding="false" can-attach-label="true">
++        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
++        <initial-values>
++          <property name="text" value="Button" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="RadioButton" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="CheckBox" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="Label" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
++          <preferred-size width="-1" height="20" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
++      </item>
++    </group>
++  </component>
++</project>
+\ No newline at end of file
