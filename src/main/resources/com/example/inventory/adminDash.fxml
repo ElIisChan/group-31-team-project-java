@@ -91,6 +91,12 @@
                    </padding>
                    <Label layoutX="25.0" layoutY="79.0" text="Orders" textFill="#818181" />
                 </VBox>
+               <VBox fx:id="editProduct" fillWidth="true" maxHeight="-Infinity" prefHeight="400.0" prefWidth="366.0" visible="false">
+                 <padding>
+                   <Insets bottom="25.0" left="25.0" top="80.0" />
+                 </padding>
+                 <Label layoutX="25.0" layoutY="79.0" text="Edit Product" textFill="#818181" />
+               </VBox>
             </children>
          </Pane>
       </children>
