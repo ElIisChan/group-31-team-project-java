@@ -7,9 +7,10 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inventory.LoginController">
    <children>
       <VBox prefHeight="400.0" prefWidth="184.0" style="-fx-background-color: #272859;">
+         <Label fx:id="loginError" textFill="RED" style="-fx-arc-width: 100%; -fx-background-color: #fff" />
          <children>
             <ImageView fitHeight="44.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -57,12 +58,12 @@
                   <Insets left="25.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="pass">
+            <PasswordField fx:id="pass">
                <VBox.margin>
                   <Insets left="25.0" right="25.0" top="10.0" />
                </VBox.margin>
-            </TextField>
-            <Button fx:id="btn_login" mnemonicParsing="false" prefHeight="30.0" prefWidth="81.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Login">
+            </PasswordField>
+            <Button fx:id="loginButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="81.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Login" onAction="#handleLogin">
                <font>
                   <Font size="14.0" />
                </font>

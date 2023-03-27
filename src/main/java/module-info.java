@@ -1,9 +1,10 @@
-module com.example.demo {
+module src {
     requires javafx.controls;
     requires javafx.fxml;
 
-    requires org.kordamp.bootstrapfx.core;
+    // requires org.kordamp.bootstrapfx.core;
+    requires java.sql;
 
-    opens com.example.demo to javafx.fxml;
-    exports com.example.demo;
+    opens com.example.inventory to javafx.fxml;
+    exports com.example.inventory;
 }
