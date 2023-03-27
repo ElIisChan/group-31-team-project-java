@@ -1,4 +1,4 @@
-package com.example.admindash;
+package com.example.inventory;
 
 
 import javafx.application.Application;
