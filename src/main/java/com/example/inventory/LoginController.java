@@ -17,8 +17,6 @@ import java.text.BreakIterator;
 public class LoginController {
     @FXML private TextField email;
     @FXML private PasswordField pass;
-    @FXML private Label messageLabel;
-    @FXML private VBox loginPane;
     @FXML private Button loginButton;
     @FXML private Label loginError;
 
@@ -31,7 +29,7 @@ public class LoginController {
     private void handleLogin() {
         String username = email.getText();
         String password = pass.getText();
-        // User user = userDB.getUser(username);
+        // @TODO - connect to database here and check if user exists
         if (username.equals("admin") && password.equals("admin")) {
             // redirect to admin dashboard
             try {
