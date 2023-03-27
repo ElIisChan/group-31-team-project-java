@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="184.0" style="-fx-background-color: #272859;">
+         <children>
+            <ImageView fitHeight="44.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Team-31/group-31-team-project-website/src/main/resources/templates/images/logo.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="15.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </ImageView>
+            <Button fx:id="btn_dash" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Dashboard">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_notif" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Notifications">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btn_orders" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Orders">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btn_edit" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Edit Webpage">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btn_logout" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Logout">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <VBox layoutX="184.0" prefHeight="400.0" prefWidth="416.0">
+         <children>
+            <Pane prefHeight="400.0" prefWidth="366.0">
+               <children>
+                  <Label text="Notifications">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="25.0" left="25.0" top="25.0" />
+                     </padding>
+                  </Label>
+                  <TableView layoutX="15.0" layoutY="79.0" prefHeight="237.0" prefWidth="387.0">
+                    <columns>
+                      <TableColumn prefWidth="123.0" text="Item" />
+                      <TableColumn prefWidth="136.0" text="Stock No." />
+                        <TableColumn minWidth="6.0" prefWidth="127.0" text="Out of Stock" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

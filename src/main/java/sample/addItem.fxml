@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="184.0" style="-fx-background-color: #272859;">
+         <children>
+            <ImageView fitHeight="44.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Team-31/group-31-team-project-website/src/main/resources/templates/images/logo.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="15.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </ImageView>
+            <Button fx:id="btn_dash" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Dashboard">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_notif" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Notifications">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btn_orders" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Orders">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btn_edit" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Edit Webpage">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btn_logout" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Logout">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <VBox layoutX="184.0" prefHeight="400.0" prefWidth="416.0">
+         <children>
+            <Pane prefHeight="400.0" prefWidth="366.0">
+               <children>
+                  <Label text="Edit Webpage">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="25.0" left="25.0" top="25.0" />
+                     </padding>
+                  </Label>
+                  <Button fx:id="btn_add" layoutX="116.0" layoutY="332.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Add Item">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="item_desc" layoutX="103.0" layoutY="178.0" prefHeight="66.0" prefWidth="283.0" />
+                  <Label layoutX="27.0" layoutY="134.0" text="Image:" />
+                  <TextField fx:id="item_name" layoutX="103.0" layoutY="88.0" />
+                  <Label layoutX="27.0" layoutY="92.0" text="Item Name:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="image_upload" layoutX="103.0" layoutY="129.0" mnemonicParsing="false" text="Upload file" />
+                  <Label layoutX="27.0" layoutY="183.0" text="Description:" />
+                  <Label layoutX="27.0" layoutY="270.0" text="Price:" />
+                  <TextField fx:id="item_price" layoutX="103.0" layoutY="265.0" prefHeight="27.0" prefWidth="76.0" />
+                  <Label layoutX="246.0" layoutY="270.0" text="Stock:" />
+                  <TextField fx:id="item_stock" layoutX="310.0" layoutY="265.0" prefHeight="27.0" prefWidth="76.0" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
