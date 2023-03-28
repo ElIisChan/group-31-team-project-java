@@ -27,7 +27,7 @@
                <Font size="14.0" />
             </font>
          </Button>
-         <Button fx:id="btn_notif" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Notifications">
+         <Button fx:id="btn_notif" mnemonicParsing="false" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #74BCDB; -fx-border-style: LinearBorder15;" text="Notifications" onAction="#showNotif">
             <font>
                <Font size="14.0" />
             </font>

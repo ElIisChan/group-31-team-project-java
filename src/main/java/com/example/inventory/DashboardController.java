@@ -33,6 +33,10 @@ public class DashboardController {
         // Hide other panes
         orderPane.setVisible(false);
         notifPane.setVisible(false);
+        // Clear other panes
+        orderPane.getChildren().clear();
+        notifPane.getChildren().clear();
+        dashPane.getChildren().clear();
         // Show dashboard pane
         dashPane.setVisible(true);
         // Setup db locally, then connect to db and get data
@@ -275,6 +279,53 @@ public class DashboardController {
         }
     }
 
+    public void showNotif() throws SQLException, ClassNotFoundException {
+        // Instead of changing scenes, hide and show parts of the dashboard
+        // Hide other panes
+        dashPane.setVisible(false);
+        orderPane.setVisible(false);
+        // Show notification pane
+        notifPane.setVisible(true);
+        // Connect to database and get notifications
+        // Setup db locally, then connect to db and get data
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/aston_31?user=a31&password=a31");
+        // Get data from product table
+        String query = "SELECT * FROM products";
+        TableView<String[]> table = new TableView<>();
+        TableColumn<String[], String> column1 = new TableColumn<>("Product Name");
+        column1.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()[0]));
+
+        TableColumn<String[], String> column2 = new TableColumn<>("Stock Level");
+        column2.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()[1]));
+
+        TableColumn<String[], String> column3 = new TableColumn<>("Price (£)");
+        column3.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()[2]));
+
+        table.getColumns().addAll(column1, column2, column3);
+        ResultSet resultSet;
+        // Add label before table explaining these products are low in stock
+        Label label = new Label("Low stock levels");
+        notifPane.getChildren().add(label);
+        try (PreparedStatement statement = dbConnection.prepareStatement(query)) {
+            statement.executeQuery();
+            resultSet = statement.getResultSet();
+            // If we get data from the database, add them to a table
+            while (resultSet.next()) {
+                if(resultSet.getInt("quantity") < 3) {
+                    // Get data from resultset
+                    String name = resultSet.getString("product_name");
+                    String quantity = String.valueOf(resultSet.getInt("quantity"));
+                    String price = String.valueOf(resultSet.getDouble("price"));
+                    String[] data = {name, quantity, price};
+                    // Add data to table within dashPane
+                    table.getItems().add(data);
+                }
+            }
+        }
+        notifPane.getChildren().add(table);
+    }
+
     // Handle logout button
     public void handleLogout() {
         // Close application
@@ -288,13 +339,11 @@ public class DashboardController {
         // Hide other panes
         dashPane.setVisible(false);
         notifPane.setVisible(false);
+        // Clear other panes
+        dashPane.getChildren().clear();
+        notifPane.getChildren().clear();
         // Show order pane
         orderPane.setVisible(true);
-        // Connect to database and get orders
-
-
-        // If we get orders from the database, add them to the VBox
-        // orderPane.getChildren().add();
 
     }
 
